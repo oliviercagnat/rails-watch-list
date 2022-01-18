@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our <%= @lists.count %> Lists</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= link_to 'Create list', new_list_path, class: 'btn btn-outline-primary my-2 my-sm-0 ml-2' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @lists.each do |list| %>
+      <div class="col-4">
+        <div class="flat-card">
+          <div class="flat-card-content">
+            <div class="flat-card-title">
+              <h4><%= list.name %></h4>
+            </div>
+          </div>
+          <div class="flat-card-actions">
+            <%= link_to 'More info', list_path(list) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

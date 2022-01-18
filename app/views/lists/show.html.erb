@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @list.name %></h1>
+  <hr class="my-4">
+  <h4 class="display-6">Bookmarks</h4>
+    <ul class="list-group">
+    <% @list.bookmarks.each do |bookmark| %>
+      <div class="card" style="width: 18rem;">
+        <img src=<%= bookmark.movie.poster_url %> alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
+          <p class="card-text">Rating: <%= bookmark.movie.rating %></p>
+          <p class="card-text">"<%= bookmark.comment %>"</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
+    </ul>
+
+</div>
+  <%= link_to 'Create a bookmark', new_list_bookmark_path(@list) %> | 
+  <%= link_to 'Back to menu', lists_path %>
+</div>
+<div class="container">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur beatae doloribus fugiat eius ipsum, debitis reiciendis! Vel dicta omnis fugit facere veritatis praesentium. Cum nisi iure cumque natus delectus tempore!
+</div>
